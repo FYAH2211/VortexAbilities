@@ -1,0 +1,385 @@
+#
+# THANKS FOR PURCHASING VORTEXABILITIES!
+#
+#  Attention!
+#  - Titles works only on 1.8+!
+#  - All sounds you can get here: 
+# https://www.youtube.com/watch?v=NOI5XV7I_yA&ab_channel=Yup
+#
+
+License: "your license"
+
+Settings:
+   removeCooldownOnQuit: false
+   removeCooldownForAdmins: false
+
+AbilitiesInventory:
+   name: "&a&lAbilities"
+   size: 54
+   
+   items:
+   - DIAMOND 1 slot:1 name:&a&lTest_1 lore:&c&lTest_Lore_1
+   - DIAMOND 1 slot:2 name:&a&lTest_2 lore:&c&lTest_Lore_2
+   - DIAMOND 1 slot:3 name:&a&lTest_3 lore:&c&lTest_Lore_3
+
+# Formats:
+#   Effect - <effect>:<seconds>:<level>
+#   Sound - <sound_name>
+#   Title - <title|subtitle> (Works only on 1.8+)
+#   shooterCommands:
+#   - "<command>"
+#   enemyCommands:
+#   - "<command>"
+#   %enemy_displayname% - Enemy/Shooter`s displayname.
+#   %enemy_name% - Enemy/Shooter`s name.
+Abilities:
+   SwitcherSnowball:
+      type: "SNOW_BALL"
+      displayname: "&b&lSwitcher Snowball"
+      lore:
+      - "&bSwitches your location with enemy!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &b&lSwitcher Snowball &cagain."
+      
+      distanceBetweenPlayers: 15
+      distanceEnemyMessage: "&7» &f%player_name% &afailed &fhis &b&lSwitcher Snowball&f!"
+      distanceShooterMessage: ""
+      
+      disableOpeningGatesOrDoors: false
+      
+      enemyMessage: "\n%shooter_name% &cthrew a &b&lSwitcher Snowball &fat you!\n&7» &fYou have been &bswitched &fwith %shooter_name%&f!\n "
+      shooterMessage: "\nYou have used &b&lSwitcher Snowball&f.\n&7» &fYou have been &bswitched &fwith %enemy_name%&f!\n "
+
+      enemyEffects:
+      - CONFUSION:5:2
+
+   RottenEgg:
+      type: "EGG"
+      displayname: "&a&lRotten Egg"
+      lore:
+      - "&aGives debuffs to enemy!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &a&lRotten Egg &cagain."
+      
+      distanceBetweenPlayers: 15
+      enemyMessage: "\n%shooter_name% &cthrew a &a&lRotten Egg &fat you!\n&7» You got Rotten Egg &adebuffs&f.\n "
+      shooterMessage: "\nYou have used &a&lRotten Egg&f.\n&7» &f%enemy_name% &fgot &a&lRotten Egg &fdebuffs!\n "
+
+      enemyEffects:
+      - POISON:10:1
+      - BLINDNESS:5:2
+      - CONFUSION:10:1
+      
+      shooterSounds:
+      - BLAST1
+      
+   AntiTrapperBone:
+      type: "BONE"
+      displayname: "&b&lAnti-Trapper Bone"
+      lore:
+      - "&aPrevents enemy to interact with blocks!"
+     
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &b&lAnti-Trapper Bone &cagain."
+      
+
+      useTime: 15
+      needHits: 3
+
+      resetHits: 30
+      
+      cantInteract: "&cYou cant interact with blocks another %time% seconds!"
+      alreadyBoned: "&c%enemy_name% is already boned!"
+      enemyMessage: "\n%shooter_name% &fhitted you using &b&lAnti-Trapper Bone&f.\n&7» &fYou can not interact will blocks another &b&l15 &fseconds!\n "
+      shooterMessage: "\nYou have used &b&lAnti-Trapper Bone&f.\n&7» %enemy_name% &fcan not interact with blocks another &b&l15 &fseconds!\n "
+
+      enemyEffects:
+      - CONFUSION:10:1
+      
+   DisarmerAxe:
+      type: "GOLD_AXE"
+      displayname: "&e&lDisarmer Axe"
+      lore:
+      - "&6Unequips Enemy`s helmet!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &e&lDisarmer Axe &cagain."
+      
+      noHelmet: "%enemy_name% &cdoesnt have a helmet on."
+      secondsToUnequip: 3
+      needHits: 3
+      
+      enemyMessage: "\n%shooter_name% &chitted you using &e&lDisarmer Axe&f.\n&7» &fYour helmet will &eunequip&f in &e&l3 &fseconds!\n "
+      shooterMessage: "\nYou have used &e&lDisarmer Axe&f.\n&7» &f%enemy_name%`s helmet will &eunequip&f in &e&l3 &fseconds!\n "
+       
+   RocketBooster:
+      type: "FIREWORK"
+      displayname: "&4&lRocket Booster"
+      lore:
+      - "&cBoosts you!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &4&lRocket Boost &cagain."
+      
+      noDamageOnBoost: true
+      
+      rocketBoost: 3.5
+      
+      shooterMessage: "\nYou have used &c&lRocket Booster&f.\n&7» &fYou have been &cboosted&f!\n "
+      enemyOnTryToAttackMessage: "&f%shooter_name% used &6&lDamage Repulser&f!\n&7» &cAll damage gived to him by you repulses. "
+
+   GuardianAngel:
+      type: "WATCH"
+      displayname: "&5&lGuardian Angel"
+      lore:
+      - "&cHeals you once your hearts drop to 2 hearts!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &5&lGuardian Angel &cagain."
+      alreadyGuarded: "&cYou are already protected by the &b&lGuardian Angel&c."
+      
+      useTime: 30
+      needHearts: 1
+      shooterMessage: "\nYou have used &5&lGuardian Angel&f.\n&7» &fYou will be healed when you have &5&l1 &fheart!\n "
+      
+   TrickOrTreat:
+      type: "GOLDEN_CARROT"
+      displayname: "&6&lTrick Or Treat"
+      lore:
+      - "&eGives strength and speed or debuffs with 50 chance."
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &6&lTrick Or Treat &cagain."
+      
+      trickChance: 50
+      
+      threatEffects:
+      - POISON:10:2
+      - SLOW:10:2
+            
+      trickEffects:
+      - SPEED:5:3
+      - INCREASE_DAMAGE:5:2
+      
+      shooterTrickMessage: "\nYou have used &6&lTrick Or Treat&f.\n&7» &fYou have been received &bSpeed III &fand &4Strength II&f!\n "
+      shooterThreatMessage: "\nYou have used &6&lTrick Or Treat&f.\n&7» &fYou have been received &2Poison II &fand &8Slowness II&f!\n "
+            
+   PotionRefill:
+      type: "STICK"
+      displayname: "&c&lPotion Refill"
+      lore:
+      - "&eFills your inventory with heal potions!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &c&lPotion Refill &cagain."
+      
+      potionsToRefill: 36
+      
+      shooterMessage: "\nYou have used &c&lPotion Refill&f.\n&7» &fYour inventory has been filled with &cpotions&f!\n " 
+      
+   FullInvis:
+      type: "INK_SACK"
+      data: 0
+      displayname: "&8&lFull Invis"
+      lore:
+      - "&7Hide yourself and your armor!"
+      
+      useTime: 30
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &8&lFull Invis &cagain."
+      alreadyInvisible: "&cYou are already full invisible."
+      
+      shooterMessage: "\nYou have used &8&lFull Invis&f.\n&7» &fYou are &7fully invisible&f for &8&l30&f seconds!\n "
+      
+   PrePearl:
+      type: "ENDER_PEARL"
+      displayname: "&b&lPre Pearl"
+      lore:
+      - "&7Hide yourself and your armor!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &b&lPre Pearl &cagain."
+      
+      timeToTeleportBack: 15
+      
+      checkSafeLocation: true
+      locationNotSafe: "&cYour old location is not safe right now."
+      
+      shooterMessage: "\nYou have used &b&lPre Pearl&f.\n&7» &fYou will be teleported back in &d&l15 seconds&f!\n "
+      
+   WebGun:
+      type: "EGG"
+      displayname: "&f&lWeb Gun"
+      lore:
+      - "&7Shoots web!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &f&lWeb Gun &cagain."
+      
+      secondsToRemoveWeb: 6
+      
+      shooterMessage: "\nYou have used &f&lWeb Gun&f.\n&7» &fNow you are on 60 seconds cooldown&f!\n "
+      
+   ConfusionStick:
+      type: "STICK"
+      displayname: "&2&lConfusion Stick"
+      lore:
+      - "&eGive your enemy nausa and slowness!"
+      
+      needHits: 3
+      #in seconds
+      resetHits: 30
+      
+      enemyEffects:
+      - CONFUSION:10:1
+      - POISON:10:1
+      
+      shooterSounds:
+      - BLAST1
+            
+      enemyMessage: "\n%shooter_name% &chitted you using &2&lConfusion Stick&f.\n&7» &fYou got Confusion Stick &adebuffs&f.\n "
+      shooterMessage: "\nYou have used &2&lConfusion Stick&f.\n&7» &f%enemy_name%&f &fgot Confusion Stick &adebuffs&f!\n "
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &2&lConfustion Stick &cagain."
+      
+   AimKick:
+      type: "WOOD_SWORD"
+      displayname: "&4&lAim Kick"
+      lore:
+      - "&cTurns the enemy's head 180 degrees!"
+     
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &4&lAim Kick &cagain."
+      
+      headDegrees: 180
+      needHits: 1
+      #in seconds
+      resetHits: 30
+      
+      enemyMessage: "\n%shooter_name% &fhitted you using &4&lAim Kick&а.\n&7» &fYour head has been 180* degreesed!\n "
+      shooterMessage: "\nYou have used &4&lAim Kick&f.\n&7» %enemy_name%&f`s head has been 180* degreesed.!\n "
+       
+   PocketBard:
+      type: "INK_SACK"
+      displayname: "&6&lPocket Bard"
+      lore:
+      - "&aChoose any bard effects!"
+      data: 11
+     
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &6&lPocket Bard &cagain."
+
+      Menu:
+        title: "&6&lPocketBard"
+        Items:
+          Strength:
+            name: "&4&lStrength"
+            lore:
+            - ""
+            - "&eClick to receive strength!"
+            - ""
+            DETAILS:
+              duration: 5
+              level: 2
+              message: "&7» &fYou successfully received &4&lStrenght II"
+          Resistance:
+            name: "&6&lResistance"
+            lore:
+            - ""
+            - "&eClick to receive resistance!"
+            - ""
+            DETAILS:
+              duration: 5
+              level: 3
+              message: "&7» &fYou successfully received &7&lResistance III"
+          Regeneration:
+            name: "&d&lRegeneration"
+            lore:
+            - ""
+            - "&eClick to receive regeneration!"
+            - ""
+            DETAILS:
+              duration: 5
+              level: 3
+              message: "&7» &fYou successfully received &d&lRegeneration III"
+          JumpBoost:
+            name: "&b&lJumpBoost"
+            lore:
+            - ""
+            - "&eClick to receive jumpboost!"
+            - ""
+            DETAILS:
+              duration: 8
+              level: 6
+              message: "&7» &fYou successfully received &b&lJumpBoost VI"
+              
+   WeaponBreaker:
+      type: "DIAMOND_AXE"
+      displayname: "&4&lWeapon Breaker"
+      lore:
+      - "&cPrevent enemy to attack for 5 seconds!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &4&lWeapon Breaker &cagain."
+      
+      needHits: 3
+      resetHits: 15
+      
+      cantAttack: "You cannot attack another %time%!"
+      
+      useTime: 5
+      
+      enemyMessage: "\n%shooter_name% &chitted you using &4&lWeapon Breaker&f.\n&7» &fYou can not attack another 5 seconds!\n "
+      shooterMessage: "\nYou have used &4&lWeapon Breaker&f.\n&7» &f%enemy_name% can not attack another 5 seconds!\n "
+      
+      enemyEffects:
+      - WEAKNESS:5:100
+      
+   DamageRepulser:
+      type: "NETHER_STAR"
+      displayname: "&6&lDamage Repulser"
+      lore:
+      - "&eAll taken damage repulsing to the enemy!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &6&lDamage Repulser &cagain."
+
+      useTime: 5
+      
+      shooterMessage: "\nYou have used &6&lDamage Repulser&f.\n&7» &fAll damage taken replusing to the enemy for!\n "
+      
+   Telekinesis:
+      type: "INK_SACK"
+      data: 6
+      displayname: "&9&lTelekinesis"
+      lore:
+      - "&bRaises the player up for a couple of seconds!"
+      
+      cooldown: 60
+      cooldownMessage: "&cPlease, wait %time%s to use &9&lTelekinesis &cagain."
+      
+      VectorY: 0.17
+      useTime: 8
+      distanceBetweenPlayers: 10
+      
+      shooterMessage: "\nYou have used &9&lTelekinesis&f.\n&7» &fYour enemy can not move for ~5 seconds&f!\n "
+      enemyMessage: "\n%shooter_name% &cused &9&lTelekinesis&f on you.\n&7» &fYou can not move for ~5 seconds!\n "
+      
+   ExplosiveBow:
+      type: BOW
+      data: 0
+      displayname: "&4&lExplosive Bow"
+      lore:
+      - "&cCreates an tnt explosion on arrow hit."
+      
+      cooldown: 5
+      cooldownMessage: "&cPlease, wait %time%s to use &4&lExplosive Bow &cagain."
+      
+      extraExplosionDamage: 5.0 # 2.0 = 1 heart
+      extraExplosionRadius: 5.0 # 0.0 to disable
+      
+      shooterMessage: "\nYou have used &4&lExplosive Bow&f."
+      

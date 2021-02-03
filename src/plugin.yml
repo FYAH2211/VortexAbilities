@@ -1,0 +1,8 @@
+main: eu.vortexgg.vortexabilities.Main
+version: 1.7
+name: VortexAbilities
+author: VortexGG
+
+commands:
+   vabilities:
+     aliases: [abilities]
